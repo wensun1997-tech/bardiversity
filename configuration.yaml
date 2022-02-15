@@ -1,0 +1,37 @@
+pretrain_cfg:
+  lr: 0.001
+  epochs: 90
+  milestones: [80]
+  gamma: 0.1
+  batch_size: 64
+  weight_decay: 0.0005
+  grad_clip: 5.
+
+prune_cfg:
+  lr: 0.001
+  epochs: 80
+  batch_size: 64
+  weight_decay: 0.0005
+  grad_clip: 5.
+  budget: 0.5
+  progress_func: sigmoid
+  _lambda: 0.00001
+  distillation_temperature: 4.
+  distillation_alpha: 0.9
+  tolerance: 0.01
+  margin: 0.0001
+  sigmoid_a: 10.
+  upper_bound: 10000000000
+  alpha: 0.
+  beta: 0.667
+  gamma: -0.1
+  zeta: 1.1
+
+finetune_cfg:
+  lr: 0.001
+  epochs: 50
+  milestones: [40]
+  gamma: 0.1
+  batch_size: 64
+  weight_decay: 0.0005
+  grad_clip: 5.
